@@ -77,32 +77,6 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
-            Positioned(
-              top: 230,
-              left: 50,
-              child: Stack(
-                children: [
-                  Container(
-                    height: 300,
-                    width: 300,
-                    decoration: BoxDecoration(
-                      color: Colors.amber,
-                      borderRadius: BorderRadius.circular(50),
-                    ),
-                    child: const Stack(
-                      children: [
-                        Row(
-                          children: [
-                            Text("data"),
-                            Icon(Icons.star_rate),
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ],
-              ),
-            ),
           ],
         ),
       ),
