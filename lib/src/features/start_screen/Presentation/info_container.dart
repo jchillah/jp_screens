@@ -1,7 +1,9 @@
 import 'dart:ui';
-import 'package:flutter/material.dart';
 
-Widget buildInfoContainer() {
+import 'package:flutter/material.dart';
+import 'package:jp_screens/src/features/main_screen/Presentation/main_screen.dart';
+
+Widget buildInfoContainer(BuildContext context) {
   return Container(
     height: 250,
     margin: const EdgeInsets.all(16.0),
@@ -70,7 +72,11 @@ Widget buildInfoContainer() {
                 ),
                 child: MaterialButton(
                   onPressed: () {
-                    // Handle button press (e.g., navigate to order screen)
+                    // Navigate to the next screen
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => MainScreen()),
+                    );
                   },
                   child: const Text(
                     '           Order Now           ',

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/start_screen/Presentation/cupcake_image.dart';
+import 'package:jp_screens/src/features/start_screen/Presentation/details_image.dart';
 import 'package:jp_screens/src/features/start_screen/Presentation/info_container.dart';
-import 'details_image.dart';
 
 class StartScreen extends StatelessWidget {
   const StartScreen({super.key});
@@ -34,7 +34,7 @@ class StartScreen extends StatelessWidget {
               bottom: 70,
               left: 16,
               right: 16,
-              child: buildInfoContainer(),
+              child: buildInfoContainer(context),
             ),
           ],
         ),

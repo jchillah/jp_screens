@@ -3,7 +3,7 @@
     "editor.formatOnSave": true,
     "vetur.format.defaultFormatter.html": "js-beautify-html",
     "[vue]": {
-        "editor.defaultFormatter": "octref.vetur"
+        "editor.defaultFormatter": "Dart-Code.flutter",
     },
     "editor.bracketPairColorization.enabled": true,
     "editor.guides.bracketPairs": "active",
@@ -17,7 +17,8 @@
         "editor.formatOnSave": true,
         "editor.formatOnType": true,
         "editor.rulers": [
-            80
+            0,
+            1,
         ],
         "editor.selectionHighlight": false,
         "editor.suggest.snippetsPreventQuickSuggestions": false,
@@ -65,30 +66,28 @@
     "editor.fontLigatures": true,
     "terminal.integrated.fontFamily": "monospace",
     "github.copilot.enable": {
-        "*": false,
+        "*": true,
         "plaintext": true,
         "markdown": true,
         "scminput": false,
         "yaml": true,
-        "dart": false,
+        "dart": true,
         "typescript": true
     },
-    "redhat.telemetry.enabled": false,
-    "git.autoRepositoryDetection": false,
+    "redhat.telemetry.enabled": true,
+    "git.autoRepositoryDetection": true,
     "files.exclude": {
         "**/*.freezed.dart": true,
         "**/*.g.dart": true
     },
     "window.zoomLevel": 2,
     "debug.toolBarLocation": "commandCenter",
-    "explorer.compactFolders": false,
-    "terminal.integrated.enableMultiLinePasteWarning": false,
+    "explorer.compactFolders": true,
+    "terminal.integrated.enableMultiLinePasteWarning": "always",
     "typescript.updateImportsOnFileMove.enabled": "always",
+    "typescript.validate.enable": true,
     "editor.codeActionsOnSave": {
         "source.fixAll": "always",
         "source.organizeImports": "always"
     },
-    "editor.codeActionsOnSave": {
-     "source.fixAll": true,
- }
 }
