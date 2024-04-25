@@ -7,12 +7,12 @@ class ProductWidget extends StatelessWidget {
   final String productImage;
 
   ProductWidget({
-    super.key, // Add Key parameter here
+    super.key,
     required this.productName,
     required this.productDescription,
     required this.productPrice,
     required this.productImage,
-  }); // Call super constructor here
+  });
 
   @override
   Widget build(BuildContext context) {
