@@ -81,6 +81,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "2.1.1"
+  card_widget:
+    dependency: "direct main"
+    description:
+      name: card_widget
+      sha256: "463125e9833a5f0d41d6541a6a47aaec3ffca5b9e9e0e9c89db6e66232ede970"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.6"
   characters:
     dependency: transitive
     description:

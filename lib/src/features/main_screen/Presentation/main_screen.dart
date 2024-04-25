@@ -36,22 +36,29 @@ class MainScreen extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 40,
+              height: 80,
               child: ListView.builder(
                 itemCount: names.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
                   return index == 0
                       ? Padding(
-                          padding: const EdgeInsets.only(right: 8.0, left: 8.0),
+                          padding: const EdgeInsets.only(
+                            right: 8.0,
+                            left: 8.0,
+                            top: 20.0,
+                            bottom: 20.0,
+                          ),
                           child: buildOverviewChoiceChip(),
                         )
                       : Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
+                          padding: const EdgeInsets.only(
+                            right: 8.0,
+                          ),
                           child: buildChoiceChip(
                             label: names[index],
-                            isSelected: true,
-                            backgroundColor: const Color(0x00edc6e9),
+                            isSelected: names[index] == 'Salty',
+                            backgroundColor: Color.fromARGB(255, 203, 138, 201),
                             selectedColor:
                                 const Color.fromARGB(255, 238, 196, 233)
                                     .withOpacity(0.3),
@@ -63,19 +70,22 @@ class MainScreen extends StatelessWidget {
                 },
               ),
             ),
-            const BurgerWidget(),
-            const SizedBox(height: 20),
-            const SizedBox(
-              width: 20,
+            Padding(
+              padding: const EdgeInsets.all(20.0),
+              child: const BurgerWidget(),
             ),
-            const Text(
-              "We Recommend",
-              style: TextStyle(
-                fontWeight: FontWeight.w900,
-                color: Colors.white,
-                fontSize: 14,
+            const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: Text(
+                "We Recommend",
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  fontSize: 14,
+                ),
               ),
             ),
+            Row(),
           ],
         ),
       ),

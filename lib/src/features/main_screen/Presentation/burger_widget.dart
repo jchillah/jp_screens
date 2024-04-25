@@ -20,13 +20,25 @@ class BurgerWidget extends StatelessWidget {
         const Positioned(
           top: 20,
           left: 20,
-          child: Text(
-            "Angi´s Yummy Burger",
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              fontSize: 14,
-            ),
+          child: Row(
+            children: [
+              Text(
+                "Angi´s Yummy Burger                                   ",
+                style: TextStyle(
+                  fontWeight: FontWeight.w900,
+                  color: Colors.white,
+                  fontSize: 14,
+                ),
+              ),
+              Icon(
+                Icons.star,
+                color: Color.fromARGB(255, 238, 130, 180),
+              ),
+              Text(
+                "4.8",
+                style: TextStyle(color: Colors.white),
+              ),
+            ],
           ),
         ),
         const Positioned(

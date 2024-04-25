@@ -36,6 +36,7 @@ dependencies:
   cupertino_icons: ^1.0.6
   audioplayers: ^6.0.0
   svg_flutter: ^0.0.1
+  card_widget: ^0.0.6
 
 dev_dependencies:
   flutter_test:
