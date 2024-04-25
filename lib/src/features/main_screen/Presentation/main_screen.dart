@@ -83,7 +83,7 @@ class MainScreen extends StatelessWidget {
                   productName: "Mogli´s Cup",
                   productDescription: "Strawberry ice cream",
                   productPrice: "A 8.99",
-                  productImage: 'assets/grafiken/Catcupcakes_3d.png',
+                  productImage: 'assets/grafiken/cat cupcakes_3D.png',
                 ),
                 SizedBox(width: 20),
                 ProductWidget(
