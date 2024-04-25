@@ -80,17 +80,17 @@ class MainScreen extends StatelessWidget {
             Row(
               children: [
                 ProductWidget(
-                  productName: "Balu's Cup",
-                  productDescription: "Pistachio ice cream",
-                  productPrice: "A 8.99",
-                  productImage: 'assets/grafiken/Ice.png',
-                ),
-                SizedBox(width: 20),
-                ProductWidget(
-                  productName: "Mogli's Cup",
+                  productName: "Mogli´s Cup",
                   productDescription: "Strawberry ice cream",
                   productPrice: "A 8.99",
                   productImage: 'assets/grafiken/Catcupcakes_3d.png',
+                ),
+                SizedBox(width: 20),
+                ProductWidget(
+                  productName: "Balu´s Cup",
+                  productDescription: "Pistachio ice cream",
+                  productPrice: "A 8.99",
+                  productImage: 'assets/grafiken/Ice.png',
                 ),
               ],
             ),
