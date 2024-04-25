@@ -76,8 +76,7 @@ Widget buildInfoContainer(BuildContext context) {
                     // Navigate to the next screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const MainScreen()),
+                      MaterialPageRoute(builder: (context) => MainScreen()),
                     );
                   },
                   child: const Text(

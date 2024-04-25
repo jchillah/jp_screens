@@ -87,7 +87,7 @@
     "typescript.updateImportsOnFileMove.enabled": "always",
     "typescript.validate.enable": true,
     "editor.codeActionsOnSave": {
-        "source.fixAll": "always",
+        "source.fixAll": "never",
         "source.organizeImports": "always"
     },
 }

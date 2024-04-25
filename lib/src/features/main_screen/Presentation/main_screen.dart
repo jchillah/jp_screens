@@ -3,7 +3,7 @@ import 'package:jp_screens/src/features/main_screen/Presentation/choicechip.dart
 import 'package:jp_screens/src/features/main_screen/Presentation/overview_choicechip.dart';
 
 class MainScreen extends StatelessWidget {
-  const MainScreen({super.key});
+  MainScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -77,6 +77,69 @@ class MainScreen extends StatelessWidget {
                 ],
               ),
             ),
+            Positioned(
+                top: 237,
+                left: 20,
+                child: Image.asset("assets/images/Rectangle 973.png")),
+            Positioned(
+                top: 310,
+                left: 160,
+                child: Image.asset("assets/grafiken/Burger_3D.png")),
+            Positioned(
+                top: 270,
+                left: 50,
+                child: Column(
+                  children: [
+                    const Text(
+                      "Angi´s Yummy Burger",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                          color: Colors.white,
+                          fontSize: 14),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    const Text(
+                      "Delish Vegan burger\nthat tastes like heaven",
+                      style: TextStyle(
+                          fontWeight: FontWeight.w200,
+                          color: Colors.white,
+                          fontSize: 14),
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    SizedBox(
+                      child: Text(
+                        "A 13,99",
+                        textAlign: TextAlign.end,
+                        style: TextStyle(
+                            fontWeight: FontWeight.w900,
+                            color: Colors.white,
+                            fontSize: 14),
+                      ),
+                    ),
+                    Positioned(
+                      top: 420,
+                      left: 40,
+                      child: ElevatedButton(
+                        onPressed: () {},
+                        child: const Text("Add to order"),
+                      ),
+                    ),
+                  ],
+                )),
+            Positioned(
+                top: 525,
+                left: 50,
+                child: Text(
+                  "We Recommend",
+                  style: TextStyle(
+                      fontWeight: FontWeight.w900,
+                      color: Colors.white,
+                      fontSize: 14),
+                ))
           ],
         ),
       ),
