@@ -42,7 +42,18 @@ class MainScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Choose Your Favorite\nSnack',
+                'Choose Your Favorite',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            Padding(
+              padding: const EdgeInsets.only(left: 8.0),
+              child: Text(
+                "Snack",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -126,6 +137,22 @@ void _showBottomSheet(BuildContext context, Product product) {
   showModalBottomSheet(
       context: context,
       builder: (BuildContext context) {
-        return Stack();
+        return Container(
+            height: 200,
+            color: Colors.red,
+            child: Center(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Text('Bottom sheet'),
+                  ElevatedButton(
+                    onPressed: () {
+                      Navigator.pop(context);
+                    },
+                    child: const Text('Close bottom sheet'),
+                  ),
+                ],
+              ),
+            ));
       });
 }
