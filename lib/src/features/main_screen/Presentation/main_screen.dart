@@ -131,7 +131,6 @@ void _showBottomSheet(BuildContext context, Product product) {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            // Bild des Produkts
             ClipRRect(
               borderRadius: BorderRadius.circular(8.0),
               child: Container(
@@ -154,10 +153,10 @@ void _showBottomSheet(BuildContext context, Product product) {
               ),
             ),
             SizedBox(height: 10),
-            // Divider
+
             Divider(),
             SizedBox(height: 10),
-            // Zutaten
+
             Row(
               children: [
                 Expanded(
@@ -173,8 +172,8 @@ void _showBottomSheet(BuildContext context, Product product) {
                         ),
                       ),
                       SizedBox(height: 5),
-                      // Hier könntest du die Icons für die Zutaten einfügen
-                      // Zum Beispiel:
+                      // Hier die Icons für die Zutaten einfügen
+                      // Icon(Icons.ingredient),
                       // Icon(Icons.ingredient),
                       // Icon(Icons.ingredient),
                       // Icon(Icons.ingredient),
@@ -195,10 +194,7 @@ void _showBottomSheet(BuildContext context, Product product) {
                         ),
                       ),
                       SizedBox(height: 5),
-                      // Hier könntest du die Bewertungen einfügen
-                      // Zum Beispiel:
-                      // Text('4.5'),
-                      // // Sternebewertung
+                      // Hier die Bewertungen einfügen
                       // StarRating(rating: 4.5),
                     ],
                   ),
