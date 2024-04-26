@@ -2,14 +2,29 @@ import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/burger_widget.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/choicechip.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/overview_choicechip.dart';
-import 'package:jp_screens/src/features/main_screen/Presentation/product_view.dart';
+import 'package:jp_screens/src/features/main_screen/domain/product.dart';
+import 'package:jp_screens/src/features/main_screen/presentation/product_view.dart';
 
 class MainScreen extends StatelessWidget {
-  MainScreen({super.key});
+  MainScreen({Key? key}) : super(key: key);
+
+  final List<Product> products = [
+    moglisCup,
+    balusCup,
+    waffle,
+    stick,
+  ];
 
   @override
   Widget build(BuildContext context) {
-    List<String> names = ["All Categories", "Salty", "Sweet", "Spicy"];
+    List<String> names = [
+      "All Categories",
+      "Salty",
+      "Sweet",
+      "Spicy",
+      "Sour",
+      "Bitter"
+    ];
 
     return Scaffold(
       body: Container(
@@ -41,24 +56,28 @@ class MainScreen extends StatelessWidget {
                 itemCount: names.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return index == 0
-                      ? Padding(
-                          padding: const EdgeInsets.symmetric(horizontal: 8.0),
-                          child: buildOverviewChoiceChip(),
-                        )
-                      : Padding(
-                          padding: const EdgeInsets.only(right: 8.0),
-                          child: buildChoiceChip(
-                            label: names[index],
-                            isSelected: names[index] == 'Salty',
-                            backgroundColor: Color.fromARGB(255, 203, 138, 201),
-                            selectedColor: Color.fromARGB(255, 238, 196, 233)
-                                .withOpacity(0.3),
-                            labelColor: Colors.black,
-                            onTap: () {},
-                            showCheckmark: false,
-                          ),
-                        );
+                  if (index == 0) {
+                    return Padding(
+                      padding: const EdgeInsets.symmetric(horizontal: 8.0),
+                      child: buildOverviewChoiceChip(),
+                    );
+                  } else {
+                    return Padding(
+                      padding: const EdgeInsets.only(right: 8.0),
+                      child: buildChoiceChip(
+                        label: names[index],
+                        isSelected: names[index] == 'Salty',
+                        backgroundColor: Color.fromARGB(255, 203, 138, 201),
+                        selectedColor:
+                            Color.fromARGB(255, 238, 196, 233).withOpacity(0.3),
+                        labelColor: names[index] == 'Salty'
+                            ? Colors.black
+                            : Colors.white,
+                        onTap: () {},
+                        showCheckmark: false,
+                      ),
+                    );
+                  }
                 },
               ),
             ),
@@ -77,22 +96,18 @@ class MainScreen extends StatelessWidget {
                 ),
               ),
             ),
-            Row(
-              children: [
-                ProductWidget(
-                  productName: "Mogli´s Cup",
-                  productDescription: "Strawberry ice cream",
-                  productPrice: "A 8.99",
-                  productImage: 'assets/grafiken/cat cupcakes_3D.png',
-                ),
-                SizedBox(width: 20),
-                ProductWidget(
-                  productName: "Balu´s Cup",
-                  productDescription: "Pistachio ice cream",
-                  productPrice: "A 8.99",
-                  productImage: 'assets/grafiken/Ice.png',
-                ),
-              ],
+            SizedBox(
+              height: 300, // Adjust height as needed
+              child: ListView.builder(
+                itemCount: products.length,
+                scrollDirection: Axis.horizontal,
+                itemBuilder: (context, index) {
+                  return Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: ProductWidget(product: products[index]),
+                  );
+                },
+              ),
             ),
           ],
         ),

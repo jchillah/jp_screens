@@ -1,24 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:jp_screens/src/features/main_screen/domain/product.dart';
 
 class ProductWidget extends StatelessWidget {
-  final String productName;
-  final String productDescription;
-  final String productPrice;
-  final String productImage;
+  final Product product;
 
-  ProductWidget({
-    super.key,
-    required this.productName,
-    required this.productDescription,
-    required this.productPrice,
-    required this.productImage,
+  const ProductWidget({
+    required this.product,
   });
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: 194,
-      height: 274,
+      width: 190,
+      height: 270,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
         gradient: LinearGradient(
@@ -30,52 +24,55 @@ class ProductWidget extends StatelessWidget {
           ],
         ),
       ),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: [
-          Container(
-            width: 170,
-            height: 128,
-            decoration: BoxDecoration(
-              image: DecorationImage(
-                image: AssetImage(productImage),
-                fit: BoxFit.fitWidth,
+      child: Padding(
+        padding: const EdgeInsets.only(left: 15.0, top: 20.0),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Container(
+              width: 160,
+              height: 150,
+              decoration: BoxDecoration(
+                image: DecorationImage(
+                  image: AssetImage(product.image),
+                  fit: BoxFit.fitWidth,
+                ),
               ),
             ),
-          ),
-          Padding(
-            padding: const EdgeInsets.only(left: 18.0, top: 10.0),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  productName,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w900,
+            Padding(
+              padding: const EdgeInsets.only(left: 15.0, top: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    product.name,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
-                ),
-                Text(
-                  productDescription,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w100,
+                  Text(
+                    product.description,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w100,
+                    ),
                   ),
-                ),
-                Text(
-                  productPrice,
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 14,
-                    fontWeight: FontWeight.w900,
+                  Text(
+                    product.price,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: 14,
+                      fontWeight: FontWeight.w900,
+                    ),
                   ),
-                ),
-              ],
+                ],
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }

@@ -43,25 +43,33 @@ class BurgerWidget extends StatelessWidget {
         const Positioned(
           top: 40,
           left: 20,
-          child: Text(
-            "Delish Vegan burger\nthat tastes like heaven",
-            style: TextStyle(
-              fontWeight: FontWeight.w200,
-              color: Colors.white,
-              fontSize: 14,
+          child: Padding(
+            padding: EdgeInsets.only(
+              top: 8.0,
+            ),
+            child: Text(
+              "Delish Vegan burger\nthat tastes like heaven",
+              style: TextStyle(
+                fontWeight: FontWeight.w200,
+                color: Colors.white,
+                fontSize: 14,
+              ),
             ),
           ),
         ),
         const Positioned(
           top: 80,
           left: 20,
-          child: Text(
-            "A 13,99",
-            textAlign: TextAlign.end,
-            style: TextStyle(
-              fontWeight: FontWeight.w900,
-              color: Colors.white,
-              fontSize: 14,
+          child: Padding(
+            padding: EdgeInsets.only(top: 12.0),
+            child: Text(
+              "A 13,99",
+              textAlign: TextAlign.end,
+              style: TextStyle(
+                fontWeight: FontWeight.w900,
+                color: Colors.white,
+                fontSize: 14,
+              ),
             ),
           ),
         ),
