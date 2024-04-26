@@ -5,6 +5,7 @@ class ProductWidget extends StatelessWidget {
   final Product product;
 
   const ProductWidget({
+    super.key,
     required this.product,
   });
 
@@ -15,7 +16,7 @@ class ProductWidget extends StatelessWidget {
       height: 270,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(30),
-        gradient: LinearGradient(
+        gradient: const LinearGradient(
           begin: Alignment.topRight,
           end: Alignment.bottomLeft,
           colors: [
@@ -46,7 +47,7 @@ class ProductWidget extends StatelessWidget {
                 children: [
                   Text(
                     product.name,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w900,
@@ -54,7 +55,7 @@ class ProductWidget extends StatelessWidget {
                   ),
                   Text(
                     product.description,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w100,
@@ -62,7 +63,7 @@ class ProductWidget extends StatelessWidget {
                   ),
                   Text(
                     product.price,
-                    style: TextStyle(
+                    style: const TextStyle(
                       color: Colors.white,
                       fontSize: 14,
                       fontWeight: FontWeight.w900,

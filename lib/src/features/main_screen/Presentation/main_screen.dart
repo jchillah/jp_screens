@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/burger_widget.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/choicechip.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/overview_choicechip.dart';
+import 'package:jp_screens/src/features/main_screen/Presentation/product_view.dart';
 import 'package:jp_screens/src/features/main_screen/domain/product.dart';
-import 'package:jp_screens/src/features/main_screen/presentation/product_view.dart';
 
 class MainScreen extends StatelessWidget {
-  MainScreen({Key? key}) : super(key: key);
+  MainScreen({Key? key});
 
   final List<Product> products = [
     moglisCup,
@@ -28,7 +28,7 @@ class MainScreen extends StatelessWidget {
 
     return Scaffold(
       body: Container(
-        decoration: BoxDecoration(
+        decoration: const BoxDecoration(
           image: DecorationImage(
             image: AssetImage('assets/hintergruende/bg_mainscreen.png'),
             fit: BoxFit.fill,
@@ -38,9 +38,9 @@ class MainScreen extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 40),
-            Padding(
-              padding: const EdgeInsets.all(8.0),
+            const SizedBox(height: 40),
+            const Padding(
+              padding: EdgeInsets.all(8.0),
               child: Text(
                 'Choose Your Favorite\nSnack',
                 style: TextStyle(
@@ -67,9 +67,10 @@ class MainScreen extends StatelessWidget {
                       child: buildChoiceChip(
                         label: names[index],
                         isSelected: names[index] == 'Salty',
-                        backgroundColor: Color.fromARGB(255, 203, 138, 201),
-                        selectedColor:
-                            Color.fromARGB(255, 238, 196, 233).withOpacity(0.3),
+                        backgroundColor:
+                            const Color.fromARGB(255, 203, 138, 201),
+                        selectedColor: const Color.fromARGB(255, 238, 196, 233)
+                            .withOpacity(0.3),
                         labelColor: names[index] == 'Salty'
                             ? Colors.black
                             : Colors.white,
@@ -81,12 +82,12 @@ class MainScreen extends StatelessWidget {
                 },
               ),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
-              child: const BurgerWidget(),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
+              child: BurgerWidget(),
             ),
-            Padding(
-              padding: const EdgeInsets.all(20.0),
+            const Padding(
+              padding: EdgeInsets.all(20.0),
               child: Text(
                 "We Recommend",
                 style: TextStyle(
@@ -102,9 +103,14 @@ class MainScreen extends StatelessWidget {
                 itemCount: products.length,
                 scrollDirection: Axis.horizontal,
                 itemBuilder: (context, index) {
-                  return Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: ProductWidget(product: products[index]),
+                  return GestureDetector(
+                    onTap: () {
+                      _showBottomSheet(context, products[index]);
+                    },
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ProductWidget(product: products[index]),
+                    ),
                   );
                 },
               ),
@@ -114,4 +120,94 @@ class MainScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+void _showBottomSheet(BuildContext context, Product product) {
+  showModalBottomSheet(
+    context: context,
+    builder: (BuildContext context) {
+      return Container(
+        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            // Bild des Produkts
+            ClipRRect(
+              borderRadius: BorderRadius.circular(8.0),
+              child: Container(
+                height: MediaQuery.of(context).size.height * 0.2,
+                decoration: BoxDecoration(
+                  image: DecorationImage(
+                    image: AssetImage(product.image),
+                    fit: BoxFit.cover,
+                  ),
+                ),
+              ),
+            ),
+            SizedBox(height: 20),
+            // Beschreibung mit Preis
+            Text(
+              '${product.name} - \$${product.price}',
+              style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 20,
+              ),
+            ),
+            SizedBox(height: 10),
+            // Divider
+            Divider(),
+            SizedBox(height: 10),
+            // Zutaten
+            Row(
+              children: [
+                Expanded(
+                  flex: 2,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        'Ingredients',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      // Hier könntest du die Icons für die Zutaten einfügen
+                      // Zum Beispiel:
+                      // Icon(Icons.ingredient),
+                      // Icon(Icons.ingredient),
+                      // Icon(Icons.ingredient),
+                    ],
+                  ),
+                ),
+                Expanded(
+                  flex: 1,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      // Bewertungen
+                      Text(
+                        'Reviews',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 16,
+                        ),
+                      ),
+                      SizedBox(height: 5),
+                      // Hier könntest du die Bewertungen einfügen
+                      // Zum Beispiel:
+                      // Text('4.5'),
+                      // // Sternebewertung
+                      // StarRating(rating: 4.5),
+                    ],
+                  ),
+                ),
+              ],
+            ),
+          ],
+        ),
+      );
+    },
+  );
 }

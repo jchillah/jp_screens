@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:jp_screens/src/features/single_view/Presentation/single_view.dart/single_view.dart';
 
 class BurgerWidget extends StatelessWidget {
   const BurgerWidget({super.key});
@@ -103,7 +102,7 @@ class BurgerWidget extends StatelessWidget {
                 // Navigate to the next screen
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => SingleView()),
+                  MaterialPageRoute(builder: (context) => const Placeholder()),
                 );
               },
               child: const Text(
