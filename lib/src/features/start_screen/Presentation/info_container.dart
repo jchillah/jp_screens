@@ -6,7 +6,7 @@ import '../../main_screen/Presentation/main_screen.dart';
 
 Widget buildInfoContainer(BuildContext context) {
   return Container(
-    height: 250,
+    height: 220,
     margin: const EdgeInsets.all(16.0),
     decoration: BoxDecoration(
       border: Border.all(
@@ -19,7 +19,7 @@ Widget buildInfoContainer(BuildContext context) {
           color: const Color.fromARGB(0, 37, 37, 37).withOpacity(0.1),
           spreadRadius: 2,
           blurRadius: 5,
-          offset: const Offset(0, 3),
+          offset: const Offset(0, 1),
         ),
       ],
     ),
@@ -52,7 +52,7 @@ Widget buildInfoContainer(BuildContext context) {
                 'Explore Angi´s most popular snack selection\nand get instantly happy',
                 style: TextStyle(
                   color: Colors.white,
-                  fontSize: 16,
+                  fontSize: 12,
                   fontWeight: FontWeight.w100,
                 ),
                 textAlign: TextAlign.center,
@@ -83,8 +83,7 @@ Widget buildInfoContainer(BuildContext context) {
                     // Navigate to the next screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(
-                          builder: (context) => const MainScreen()),
+                      MaterialPageRoute(builder: (context) => MainScreen()),
                     );
                   },
                   child: const Text(

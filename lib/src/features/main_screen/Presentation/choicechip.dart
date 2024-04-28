@@ -16,7 +16,9 @@ Widget buildChoiceChip({
       style: TextStyle(color: labelColor),
     ),
     selected: isSelected,
-    onSelected: (selected) {},
+    onSelected: (selected) {
+      if (selected) onTap();
+    },
     selectedColor: selectedColor,
     backgroundColor: backgroundColor,
     shape: RoundedRectangleBorder(

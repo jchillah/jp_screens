@@ -7,13 +7,16 @@ import 'package:jp_screens/src/features/main_screen/Presentation/product_view.da
 import 'package:jp_screens/src/features/main_screen/domain/product.dart';
 
 class MainScreen extends StatefulWidget {
-  const MainScreen({super.key});
+  MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
 
+String selectedCategory = '';
+
 class _MainScreenState extends State<MainScreen> {
+  List<String> names = ["Salty", "Sweet", "Spicy", "Sour", "Bitter"];
   final List<Product> products = [
     moglisCup,
     balusCup,
@@ -23,14 +26,7 @@ class _MainScreenState extends State<MainScreen> {
 
   @override
   Widget build(BuildContext context) {
-    List<String> names = [
-      "All Categories",
-      "Salty",
-      "Sweet",
-      "Spicy",
-      "Sour",
-      "Bitter"
-    ];
+    final List<String> names = ["Salty", "Sweet", "Spicy", "Sour", "Bitter"];
 
     return Scaffold(
       body: Container(
@@ -68,7 +64,7 @@ class _MainScreenState extends State<MainScreen> {
               ),
             ),
             SizedBox(
-              height: 80,
+              height: 50,
               child: ListView.builder(
                 itemCount: names.length,
                 scrollDirection: Axis.horizontal,
@@ -83,15 +79,19 @@ class _MainScreenState extends State<MainScreen> {
                       padding: const EdgeInsets.only(right: 8.0),
                       child: buildChoiceChip(
                         label: names[index],
-                        isSelected: names[index] == 'Salty',
+                        isSelected: selectedCategory == names[index],
                         backgroundColor:
                             const Color.fromARGB(255, 203, 138, 201),
                         selectedColor: const Color.fromARGB(255, 238, 196, 233)
                             .withOpacity(0.3),
-                        labelColor: names[index] == 'Salty'
+                        labelColor: selectedCategory == names[index]
                             ? Colors.black
                             : Colors.white,
-                        onTap: () {},
+                        onTap: () {
+                          setState(() {
+                            selectedCategory = names[index];
+                          });
+                        },
                         showCheckmark: false,
                       ),
                     );
