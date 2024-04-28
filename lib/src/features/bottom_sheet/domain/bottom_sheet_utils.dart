@@ -7,7 +7,7 @@ import 'package:jp_screens/src/features/main_screen/domain/product.dart';
 class BottomSheetUtils {
   static void showBottomSheet(BuildContext context, Product product) {
     int quantity = 1;
-    String selectedSize = "Large";
+    String selectedSize = "";
 
     showModalBottomSheet<void>(
       context: context,
@@ -52,10 +52,10 @@ class BottomSheetUtils {
                     children: [
                       Row(
                         children: [
-                          SizedBox(
+                          const SizedBox(
                             width: 24,
                           ),
-                          SizedBox(
+                          const SizedBox(
                             height: 20,
                           ),
                           SizeSegmentedButton(
@@ -79,7 +79,7 @@ class BottomSheetUtils {
                           ),
                         ],
                       ),
-                      SizedBox(
+                      const SizedBox(
                         height: 40,
                       ),
                       Padding(
@@ -87,6 +87,7 @@ class BottomSheetUtils {
                             left: 20.0, right: 20, bottom: 20),
                         child: Container(
                           height: 40,
+                          width: 370,
                           decoration: const BoxDecoration(
                             borderRadius: BorderRadius.all(
                               Radius.circular(8),
@@ -117,9 +118,9 @@ class BottomSheetUtils {
                               );
                             },
                             child: Text(
-                              '     Add to order for ${product.price}     ',
+                              'Add to order for ${product.price}',
                               textAlign: TextAlign.center,
-                              style: TextStyle(
+                              style: const TextStyle(
                                 color: Colors.white,
                                 fontSize: 14,
                               ),

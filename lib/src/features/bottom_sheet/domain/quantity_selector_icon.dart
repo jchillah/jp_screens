@@ -5,10 +5,10 @@ class QuantitySelector extends StatelessWidget {
   final void Function(int) onQuantityChanged;
 
   const QuantitySelector({
-    Key? key,
+    super.key,
     required this.quantity,
     required this.onQuantityChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +25,7 @@ class QuantitySelector extends StatelessWidget {
         ),
         Text(
           '$quantity',
-          style: TextStyle(color: Colors.white),
+          style: const TextStyle(color: Colors.white),
         ),
         IconButton(
           icon: const Icon(Icons.add_circle_rounded,

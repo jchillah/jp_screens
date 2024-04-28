@@ -5,17 +5,17 @@ class SizeSegmentedButton extends StatelessWidget {
   final void Function(Set<String>) onSelectionChanged;
 
   const SizeSegmentedButton({
-    Key? key,
+    super.key,
     required this.selectedSize,
     required this.onSelectionChanged,
-  }) : super(key: key);
+  });
 
   @override
   Widget build(BuildContext context) {
     return SegmentedButton<String>(
       style: ButtonStyle(
         shape: MaterialStateProperty.all(
-          RoundedRectangleBorder(
+          const RoundedRectangleBorder(
             borderRadius: BorderRadius.all(
               Radius.elliptical(8, 16),
             ),
@@ -30,7 +30,7 @@ class SizeSegmentedButton extends StatelessWidget {
           },
         ),
         textStyle: MaterialStateProperty.all(
-          TextStyle(
+          const TextStyle(
             fontSize: 12,
           ),
         ),
