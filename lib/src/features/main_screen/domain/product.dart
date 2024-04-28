@@ -30,13 +30,13 @@ Product balusCup = Product(
 Product waffle = Product(
   name: "Waffle Ice",
   description: "You've got one on the waffle",
-  price: "A 8.99",
+  price: "A 3.99",
   image: 'assets/grafiken/Icecream_3D.png',
 );
 
 Product stick = Product(
   name: "Ice Stick",
   description: "A sticky taste",
-  price: "A 8.99",
+  price: "A 3.99",
   image: 'assets/grafiken/ice cream stick_3D.png',
 );
