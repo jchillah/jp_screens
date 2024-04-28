@@ -10,13 +10,13 @@ Widget buildInfoContainer(BuildContext context) {
     margin: const EdgeInsets.all(16.0),
     decoration: BoxDecoration(
       border: Border.all(
-        color: const Color.fromARGB(31, 255, 255, 255).withOpacity(0.8),
+        color: const Color.fromARGB(31, 255, 255, 255).withOpacity(0.1),
         width: 1,
       ),
       borderRadius: BorderRadius.circular(24.0),
       boxShadow: [
         BoxShadow(
-          color: const Color.fromARGB(0, 37, 37, 37).withOpacity(0.8),
+          color: const Color.fromARGB(0, 37, 37, 37).withOpacity(0.1),
           spreadRadius: 2,
           blurRadius: 5,
           offset: const Offset(0, 3),
@@ -26,13 +26,13 @@ Widget buildInfoContainer(BuildContext context) {
     child: ClipRRect(
       borderRadius: BorderRadius.circular(24.0),
       child: BackdropFilter(
-        filter: ImageFilter.blur(sigmaX: 5.0, sigmaY: 5.0),
+        filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
         child: Container(
           decoration: BoxDecoration(
             border: Border.all(
-                color: const Color.fromARGB(47, 255, 255, 255).withOpacity(0.8),
+                color: const Color.fromARGB(47, 255, 255, 255).withOpacity(0.1),
                 width: 1),
-            color: const Color.fromRGBO(0, 0, 0, 0),
+            color: const Color.fromRGBO(0, 0, 0, 0).withOpacity(0.1),
           ),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -76,7 +76,8 @@ Widget buildInfoContainer(BuildContext context) {
                     // Navigate to the next screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MainScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const MainScreen()),
                     );
                   },
                   child: const Text(

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-Widget buildOverviewChoiceChip() {
+Widget buildOverviewChoiceChip({Key? key}) {
   return GestureDetector(
     onTap: () {},
     child: Container(
