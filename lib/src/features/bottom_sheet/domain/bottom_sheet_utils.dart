@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:jp_screens/src/features/bottom_sheet/domain/quantity_selector_icon.dart';
+import 'package:jp_screens/src/features/bottom_sheet/domain/segmented_button.dart';
 import 'package:jp_screens/src/features/bottom_sheet/presentation/bottom_sheet_container.dart';
 import 'package:jp_screens/src/features/main_screen/domain/product.dart';
 
@@ -56,53 +58,8 @@ class BottomSheetUtils {
                           SizedBox(
                             height: 20,
                           ),
-                          SegmentedButton<String>(
-                            style: ButtonStyle(
-                              shape: MaterialStatePropertyAll(
-                                  RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.all(
-                                Radius.elliptical(8, 16),
-                              ))),
-                              backgroundColor:
-                                  MaterialStateProperty.resolveWith<Color>(
-                                (Set<MaterialState> states) {
-                                  if (states.contains(MaterialState.selected)) {
-                                    return Colors.grey.shade800;
-                                  }
-                                  return Colors.grey.shade900;
-                                },
-                              ),
-                              textStyle: MaterialStatePropertyAll(
-                                TextStyle(
-                                  fontSize: 12,
-                                ),
-                              ),
-                            ),
-                            segments: <ButtonSegment<String>>[
-                              ButtonSegment<String>(
-                                value: "Small",
-                                label: Text(
-                                  'Small',
-                                  style: TextStyle(color: Colors.white24),
-                                ),
-                              ),
-                              ButtonSegment<String>(
-                                value: "Medium",
-                                label: Text(
-                                  'Medium',
-                                  style: TextStyle(color: Colors.white24),
-                                ),
-                              ),
-                              ButtonSegment<String>(
-                                value: "Large",
-                                label: Text(
-                                  'Large',
-                                  style: TextStyle(color: Colors.white54),
-                                ),
-                              ),
-                            ],
-                            selected: <String>{selectedSize},
-                            showSelectedIcon: false,
+                          SizeSegmentedButton(
+                            selectedSize: selectedSize,
                             onSelectionChanged: (Set<String> newSelection) {
                               setState(() {
                                 selectedSize = newSelection.first;
@@ -112,27 +69,11 @@ class BottomSheetUtils {
                           const SizedBox(
                             width: 55,
                           ),
-                          IconButton(
-                            icon: const Icon(
-                              Icons.remove_circle_rounded,
-                              color: Color.fromARGB(255, 103, 102, 102),
-                            ),
-                            onPressed: () {
+                          QuantitySelector(
+                            quantity: quantity,
+                            onQuantityChanged: (newQuantity) {
                               setState(() {
-                                quantity--;
-                              });
-                            },
-                          ),
-                          Text(
-                            '$quantity',
-                            style: TextStyle(color: Colors.white),
-                          ),
-                          IconButton(
-                            icon: const Icon(Icons.add_circle_rounded,
-                                color: Color.fromARGB(255, 103, 102, 102)),
-                            onPressed: () {
-                              setState(() {
-                                quantity++; // Erhöhe die Menge um 1
+                                quantity = newQuantity;
                               });
                             },
                           ),
