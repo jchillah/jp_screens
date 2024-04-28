@@ -61,7 +61,7 @@ Widget buildInfoContainer(BuildContext context) {
               Container(
                 margin: const EdgeInsets.symmetric(horizontal: 48),
                 decoration: BoxDecoration(
-                  boxShadow: [
+                  boxShadow: const [
                     BoxShadow(
                       color: Color.fromRGBO(218, 128, 163, 1),
                       offset: Offset(0, 4),
