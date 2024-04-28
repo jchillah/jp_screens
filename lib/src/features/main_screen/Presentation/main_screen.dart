@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:jp_screens/src/features/bottom_sheet/domain/bottom_sheet_utils.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/burger_widget.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/choicechip.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/overview_choicechip.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/product_view.dart';
 import 'package:jp_screens/src/features/main_screen/domain/product.dart';
 
-class MainScreen extends StatelessWidget {
-  MainScreen({Key? key});
+class MainScreen extends StatefulWidget {
+  const MainScreen({super.key});
 
+  @override
+  State<MainScreen> createState() => _MainScreenState();
+}
+
+class _MainScreenState extends State<MainScreen> {
   final List<Product> products = [
     moglisCup,
     balusCup,
@@ -42,7 +48,18 @@ class MainScreen extends StatelessWidget {
             const Padding(
               padding: EdgeInsets.all(8.0),
               child: Text(
-                'Choose Your Favorite\nSnack',
+                'Choose Your Favorite',
+                style: TextStyle(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+            const Padding(
+              padding: EdgeInsets.only(left: 8.0),
+              child: Text(
+                "Snack",
                 style: TextStyle(
                   color: Colors.white,
                   fontSize: 24,
@@ -105,7 +122,8 @@ class MainScreen extends StatelessWidget {
                 itemBuilder: (context, index) {
                   return GestureDetector(
                     onTap: () {
-                      _showBottomSheet(context, products[index]);
+                      BottomSheetUtils.showBottomSheet(
+                          context, products[index]);
                     },
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -120,90 +138,4 @@ class MainScreen extends StatelessWidget {
       ),
     );
   }
-}
-
-void _showBottomSheet(BuildContext context, Product product) {
-  showModalBottomSheet(
-    context: context,
-    builder: (BuildContext context) {
-      return Container(
-        padding: const EdgeInsets.symmetric(vertical: 20, horizontal: 20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            ClipRRect(
-              borderRadius: BorderRadius.circular(8.0),
-              child: Container(
-                height: MediaQuery.of(context).size.height * 0.2,
-                decoration: BoxDecoration(
-                  image: DecorationImage(
-                    image: AssetImage(product.image),
-                    fit: BoxFit.cover,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(height: 20),
-            // Beschreibung mit Preis
-            Text(
-              '${product.name} - \$${product.price}',
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 20,
-              ),
-            ),
-            SizedBox(height: 10),
-
-            Divider(),
-            SizedBox(height: 10),
-
-            Row(
-              children: [
-                Expanded(
-                  flex: 2,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        'Ingredients',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      // Hier die Icons für die Zutaten einfügen
-                      // Icon(Icons.ingredient),
-                      // Icon(Icons.ingredient),
-                      // Icon(Icons.ingredient),
-                      // Icon(Icons.ingredient),
-                    ],
-                  ),
-                ),
-                Expanded(
-                  flex: 1,
-                  child: Column(
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      // Bewertungen
-                      Text(
-                        'Reviews',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 16,
-                        ),
-                      ),
-                      SizedBox(height: 5),
-                      // Hier die Bewertungen einfügen
-                      // StarRating(rating: 4.5),
-                    ],
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
-      );
-    },
-  );
 }
