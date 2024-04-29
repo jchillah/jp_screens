@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:jp_screens/src/features/bottom_sheet/domain/bottom_sheet_utils.dart';
+import 'package:jp_screens/src/features/bottom_sheet/presentation/bottom_sheet_utils.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/burger_widget.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/choicechip.dart';
 import 'package:jp_screens/src/features/main_screen/Presentation/overview_choicechip.dart';

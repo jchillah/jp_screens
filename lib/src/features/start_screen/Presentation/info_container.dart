@@ -16,7 +16,7 @@ Widget buildInfoContainer(BuildContext context) {
       borderRadius: BorderRadius.circular(24.0),
       boxShadow: [
         BoxShadow(
-          color: const Color.fromARGB(0, 37, 37, 37).withOpacity(0.1),
+          color: Color.fromARGB(255, 37, 37, 37).withOpacity(0.1),
           spreadRadius: 2,
           blurRadius: 5,
           offset: const Offset(0, 1),

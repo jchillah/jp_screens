@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:jp_screens/src/features/bottom_sheet/domain/quantity_selector_icon.dart';
-import 'package:jp_screens/src/features/bottom_sheet/domain/segmented_button.dart';
 import 'package:jp_screens/src/features/bottom_sheet/presentation/bottom_sheet_container.dart';
+import 'package:jp_screens/src/features/bottom_sheet/presentation/quantity_selector_icon.dart';
+import 'package:jp_screens/src/features/bottom_sheet/presentation/segmented_button.dart';
 import 'package:jp_screens/src/features/main_screen/domain/product.dart';
 
 class BottomSheetUtils {

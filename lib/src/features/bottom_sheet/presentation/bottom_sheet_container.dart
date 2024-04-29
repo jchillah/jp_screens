@@ -8,8 +8,8 @@ Widget buildBottomSheetDescriptionContainer(
   return Padding(
     padding: const EdgeInsets.only(left: 16, right: 16),
     child: Container(
-      height: 380,
-      margin: const EdgeInsets.all(0.0),
+      height: 360,
+      margin: const EdgeInsets.all(0.9),
       decoration: BoxDecoration(
         border: Border.all(
           color: const Color.fromARGB(31, 255, 255, 255).withOpacity(0.1),
@@ -18,10 +18,10 @@ Widget buildBottomSheetDescriptionContainer(
         borderRadius: BorderRadius.circular(24.0),
         boxShadow: [
           BoxShadow(
-            color: const Color.fromARGB(0, 37, 37, 37).withOpacity(0.1),
+            color: Color.fromARGB(255, 37, 37, 37).withOpacity(0.1),
             spreadRadius: 2,
             blurRadius: 5,
-            offset: const Offset(0, 3),
+            offset: const Offset(0, 1),
           ),
         ],
       ),
@@ -35,7 +35,7 @@ Widget buildBottomSheetDescriptionContainer(
                 color: const Color.fromARGB(47, 255, 255, 255).withOpacity(0.1),
                 width: 1,
               ),
-              color: const Color.fromRGBO(0, 0, 0, 0).withOpacity(0.1),
+              color: Color.fromARGB(61, 0, 0, 0).withOpacity(0.1),
             ),
             child: Column(
               children: [
@@ -63,7 +63,7 @@ Widget buildBottomSheetDescriptionContainer(
                   child: Text(
                     product.name,
                     style: const TextStyle(
-                      fontSize: 28,
+                      fontSize: 18,
                       fontWeight: FontWeight.bold,
                       color: Colors.white,
                     ),
@@ -79,7 +79,7 @@ Widget buildBottomSheetDescriptionContainer(
                   ),
                 ),
                 const SizedBox(
-                  height: 20,
+                  height: 18,
                 ),
                 Text(
                   product.price,
