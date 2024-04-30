@@ -16,7 +16,7 @@ Widget buildInfoContainer(BuildContext context) {
       borderRadius: BorderRadius.circular(24.0),
       boxShadow: [
         BoxShadow(
-          color: Color.fromARGB(255, 37, 37, 37).withOpacity(0.1),
+          color: const Color.fromARGB(255, 37, 37, 37).withOpacity(0.1),
           spreadRadius: 2,
           blurRadius: 5,
           offset: const Offset(0, 1),
@@ -83,7 +83,8 @@ Widget buildInfoContainer(BuildContext context) {
                     // Navigate to the next screen
                     Navigator.push(
                       context,
-                      MaterialPageRoute(builder: (context) => MainScreen()),
+                      MaterialPageRoute(
+                          builder: (context) => const MainScreen()),
                     );
                   },
                   child: const Text(

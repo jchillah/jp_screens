@@ -18,9 +18,9 @@ Widget buildBottomSheetDescriptionContainer(
         borderRadius: BorderRadius.circular(24.0),
         boxShadow: [
           BoxShadow(
-            color: Color.fromARGB(255, 37, 37, 37).withOpacity(0.1),
+            color: const Color.fromARGB(255, 37, 37, 37).withOpacity(0.1),
             spreadRadius: 2,
-            blurRadius: 5,
+            blurRadius: 3,
             offset: const Offset(0, 1),
           ),
         ],
@@ -35,10 +35,10 @@ Widget buildBottomSheetDescriptionContainer(
                 color: const Color.fromARGB(47, 255, 255, 255).withOpacity(0.1),
                 width: 1,
               ),
-              color: Color.fromARGB(61, 0, 0, 0).withOpacity(0.1),
+              color: const Color.fromARGB(61, 0, 0, 0).withOpacity(0.1),
             ),
             child: Column(
-              children: [
+              children: <Widget>[
                 const Padding(
                   padding: EdgeInsets.all(8.0),
                   child: Row(

@@ -7,16 +7,21 @@ import 'package:jp_screens/src/features/main_screen/Presentation/product_view.da
 import 'package:jp_screens/src/features/main_screen/domain/product.dart';
 
 class MainScreen extends StatefulWidget {
-  MainScreen({super.key});
+  const MainScreen({super.key});
 
   @override
   State<MainScreen> createState() => _MainScreenState();
 }
 
-String selectedCategory = '';
-
 class _MainScreenState extends State<MainScreen> {
-  List<String> names = ["Salty", "Sweet", "Spicy", "Sour", "Bitter"];
+  List<String> names = [
+    "Salty",
+    "Sweet",
+    "Spicy",
+    "Sour",
+    "Bitter",
+  ];
+
   final List<Product> products = [
     moglisCup,
     balusCup,
@@ -24,10 +29,10 @@ class _MainScreenState extends State<MainScreen> {
     stick,
   ];
 
+  String selectedCategory = '';
+
   @override
   Widget build(BuildContext context) {
-    final List<String> names = ["Salty", "Sweet", "Spicy", "Sour", "Bitter"];
-
     return Scaffold(
       body: Container(
         decoration: const BoxDecoration(
@@ -42,7 +47,10 @@ class _MainScreenState extends State<MainScreen> {
           children: [
             const SizedBox(height: 40),
             const Padding(
-              padding: EdgeInsets.all(8.0),
+              padding: EdgeInsets.only(
+                left: 20.0,
+                top: 20,
+              ),
               child: Text(
                 'Choose Your Favorite',
                 style: TextStyle(
@@ -63,8 +71,11 @@ class _MainScreenState extends State<MainScreen> {
                 ),
               ),
             ),
+            const SizedBox(
+              height: 20,
+            ),
             SizedBox(
-              height: 50,
+              height: 40,
               child: ListView.builder(
                 itemCount: names.length,
                 scrollDirection: Axis.horizontal,
