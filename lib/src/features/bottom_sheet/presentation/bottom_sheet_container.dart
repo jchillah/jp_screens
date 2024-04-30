@@ -28,14 +28,14 @@ Widget buildBottomSheetDescriptionContainer(
       child: ClipRRect(
         borderRadius: BorderRadius.circular(24.0),
         child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 20.0, sigmaY: 20.0),
+          filter: ImageFilter.blur(sigmaX: 10.0, sigmaY: 10.0),
           child: Container(
             decoration: BoxDecoration(
               border: Border.all(
                 color: const Color.fromARGB(47, 255, 255, 255).withOpacity(0.1),
                 width: 1,
               ),
-              color: const Color.fromARGB(61, 0, 0, 0).withOpacity(0.1),
+              color: const Color.fromARGB(61, 0, 0, 0).withOpacity(0.7),
             ),
             child: Column(
               children: <Widget>[
